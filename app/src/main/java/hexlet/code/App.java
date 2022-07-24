@@ -9,9 +9,9 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even numbers");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
-        int gameNumber = sc.nextInt();
-        System.out.println("Your choice: " + gameNumber);
+        System.out.println("Your choice: "); int gameNumber = sc.nextInt();
         if (gameNumber == 1) {
             System.out.println("Welcome to the Brain Games!");
             final String gameGreet = Cli.getName();
@@ -22,6 +22,9 @@ public class App {
         } else if (gameNumber == 3) {
             final String calc = Calc.calc();
             System.out.println(calc);
+        } else if (gameNumber == 4) {
+            final String gcd = GCD.gcd();
+            System.out.println(gcd);
         } else if (gameNumber == 0) {
             System.out.println("The Champ is here");
         }
