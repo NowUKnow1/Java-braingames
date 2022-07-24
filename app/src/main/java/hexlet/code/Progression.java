@@ -10,7 +10,7 @@ public class Progression {
         System.out.println("Welcome to the Brain Games!");
         final String game = Cli.getName();
         System.out.println("Hello, " + game + "!");
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println("What number is missing in the progression?");
         Random random = new Random();
         Scanner answer = new Scanner(System.in);
         for (int i = 0; i < rightAnswersInARow;) {
