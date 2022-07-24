@@ -10,6 +10,7 @@ public class App {
         System.out.println("2 - Even numbers");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         System.out.println("Your choice: "); int gameNumber = sc.nextInt();
         if (gameNumber == 1) {
@@ -25,6 +26,9 @@ public class App {
         } else if (gameNumber == 4) {
             final String gcd = GCD.gcd();
             System.out.println(gcd);
+        } else if (gameNumber == 5) {
+            final String progression = Progression.progression();
+            System.out.println(progression);
         } else if (gameNumber == 0) {
             System.out.println("The Champ is here");
         }
