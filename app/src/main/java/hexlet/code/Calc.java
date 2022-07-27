@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Random;
 
-public class Calc implements Engine{
+public class Calc implements Engine {
     public String game() {
         System.out.println("What is the result of the expression?");
         Random random = new Random();
@@ -13,7 +13,7 @@ public class Calc implements Engine{
         if (chooseMath == 1) {
             rightAnswer = firstNumber + secondNumber;
             System.out.println(firstNumber + " + " + secondNumber);
-        }else if (chooseMath == 2) {
+        } else if (chooseMath == 2) {
             rightAnswer = firstNumber - secondNumber;
             System.out.println(firstNumber + " - " + secondNumber);
         } else if (chooseMath == 3) {

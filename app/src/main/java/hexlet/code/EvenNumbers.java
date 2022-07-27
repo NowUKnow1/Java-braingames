@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
 public class EvenNumbers implements Engine {
     @Override
     public String start() {

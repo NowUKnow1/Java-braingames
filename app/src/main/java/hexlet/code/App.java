@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class App {
 
-    private static  final Map<Integer, Engine> games = new LinkedHashMap<>(){{
+    private static  final Map<Integer, Engine> games = new LinkedHashMap<>() {{
         put(2, new EvenNumbers());
         put(3, new Calc());
         put(4, new GCD());
