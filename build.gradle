@@ -1,0 +1,37 @@
+plugins {
+    id 'application'
+    id 'checkstyle'
+}
+
+group 'hexlet.code'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.release = 17
+}
+
+run {
+    standardInput = System.in
+}
+
+
+application {
+    mainClass = 'hexlet.code.App'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion "9.2.1"
+}
