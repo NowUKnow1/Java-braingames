@@ -2,12 +2,11 @@ package hexlet.code;
 
 import java.util.Random;
 
-public class GCD implements  Engine {
+public class GCD extends Engine {
     @Override
-    public String start() {
-        return Engine.super.start();
+    public String getName() {
+        return "GCD";
     }
-
 
 
     public String game() {

@@ -2,14 +2,14 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-interface Engine {
+public abstract class Engine {
     int questionToWin = 3;
 
     int questionToLose = 1;
 
     Scanner scanner = new Scanner(System.in);
 
-    default String start() {
+    public void start() {
         System.out.println("Welcome to the Brain Games!");
         final String userName = Cli.getName();
         System.out.println("Hello, " + userName + "!");
@@ -36,7 +36,9 @@ interface Engine {
                     + "Correct answer was '" + checkAnswer + "'."
                     + "Let's try again, " + userName);
         }
-        return "Congrats!";
     }
-    String game();
+
+    public abstract String getName();
+
+    abstract String game();
 }

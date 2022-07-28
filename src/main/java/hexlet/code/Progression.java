@@ -3,7 +3,11 @@ package hexlet.code;
 import java.util.Random;
 import java.util.Arrays;
 
-public class Progression implements Engine {
+public class Progression extends Engine {
+
+    public String getName() {
+        return "Progression";
+    }
     public String game() {
         System.out.println("What number is missing in the progression?");
         Random random = new Random();
@@ -19,15 +23,16 @@ public class Progression implements Engine {
                 correctAnswer = numbersInProgression[j];
             }
         }
-        String[] arrayForQuestion = new String[maxNumbersInProgression];
+        String arrayForQuestion = "";
         for (int k = 0; k < maxNumbersInProgression; k++) {
-            int[] neededNumber = Arrays.copyOfRange(numbersInProgression, k, k + 1);
-            arrayForQuestion[k] = Arrays.toString(neededNumber);
+            String stepByStepGettingQuestion = Arrays.toString(new int[]{numbersInProgression[k]});
             if (k == hiddenNumberInProgression) {
-                arrayForQuestion[k] = "..";
+                arrayForQuestion = arrayForQuestion +  ".., ";
+            } else {
+                arrayForQuestion = arrayForQuestion + ", " + stepByStepGettingQuestion;
             }
         }
-        System.out.println("Question: " + Arrays.toString(arrayForQuestion));
+        System.out.println("Question: " + arrayForQuestion);
         return Integer.toString(correctAnswer);
     }
 }

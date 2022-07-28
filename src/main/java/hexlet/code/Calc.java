@@ -2,24 +2,32 @@ package hexlet.code;
 
 import java.util.Random;
 
-public class Calc implements Engine {
+public class Calc extends Engine {
+
+    public String getName() {
+        return "Calc";
+    }
     public String game() {
+        int maxFirstNumber = 101;
+        int maxSecondNumber = 101;
+        int neededNumberOfOperations = 3;
         System.out.println("What is the result of the expression?");
         Random random = new Random();
-        int firstNumber = random.nextInt(101);
-        int secondNumber = random.nextInt(101);
-        int chooseMath = random.nextInt(3) + 1;
-        int rightAnswer = 0;
-        if (chooseMath == 1) {
-            rightAnswer = firstNumber + secondNumber;
-            System.out.println(firstNumber + " + " + secondNumber);
-        } else if (chooseMath == 2) {
-            rightAnswer = firstNumber - secondNumber;
-            System.out.println(firstNumber + " - " + secondNumber);
-        } else if (chooseMath == 3) {
-            rightAnswer = firstNumber * secondNumber;
-            System.out.println(firstNumber + " * " + secondNumber);
+        int firstNumber = random.nextInt(maxFirstNumber);
+        int secondNumber = random.nextInt(maxSecondNumber);
+        int chooseMath = random.nextInt(neededNumberOfOperations) + 1;
+        switch (chooseMath) {
+            case 1:
+                System.out.println(firstNumber + " + " + secondNumber);
+                return Integer.toString(firstNumber + secondNumber);
+            case 2:
+                System.out.println(firstNumber + " - " + secondNumber);
+                return Integer.toString(firstNumber - secondNumber);
+            case 3:
+                System.out.println(firstNumber + " * " + secondNumber);
+                return Integer.toString(firstNumber * secondNumber);
+            default:
+                return null;
         }
-        return Integer.toString(rightAnswer);
     }
 }
