@@ -1,23 +1,35 @@
-package hexlet.code;
+package hexlet.code.Games;
 
 import java.util.Random;
 
-public class PrimeNumbers extends Engine{
+public class PrimeNumbers implements Game {
+
+    String answer = "";
+
+    int randomNumber = 0;
 
     public String getName() {
         return "Prime Numbers";
     }
-    public String game() {
-        int maxNumbers = 100;
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+
+    public String getGoal() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    }
+
+    public String getAnswerAndQuestion() {
+        final int maxNumbers = 101;
+        final String prime = "yes";
+        final String notPrime = "no";
         Random random = new Random();
-        int randomNumber = random.nextInt(101);
+        randomNumber = random.nextInt(maxNumbers);
         System.out.println("Question: " + randomNumber);
         if (randomNumber % 2 == 0 || randomNumber % 3 == 0 || randomNumber % 5 == 0 || randomNumber % 7 == 0) {
-            return "yes";
+            answer = notPrime;
         } else {
-            return "no";
+            answer = prime;
         }
+        return answer;
     }
 }
+
 

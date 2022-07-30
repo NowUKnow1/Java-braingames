@@ -1,25 +1,36 @@
 package hexlet.code;
 
+import hexlet.code.Games.Game;
+
 import java.util.Scanner;
 
-public abstract class Engine {
+ final public class Engine {
     int questionToWin = 3;
 
     int questionToLose = 1;
 
+    String userName = "";
+
     Scanner scanner = new Scanner(System.in);
 
-    public void start() {
-        System.out.println("Welcome to the Brain Games!");
-        final String userName = Cli.getName();
-        System.out.println("Hello, " + userName + "!");
-        int rightAnswers = 0;
-        int wrongAnswers = 0;
-        String checkAnswer = "";
-        String answer = "";
+    Game game;
+
+     public Engine(Game game) {
+         this.game = game;
+     }
+     public void start() {
+         System.out.println("Welcome to the Brain Games!");
+         userName = Cli.getName();
+         System.out.println("Hello, " + userName + "!");
+         String goal = game.getGoal();
+         System.out.println(goal);
+         int rightAnswers = 0;
+         int wrongAnswers = 0;
+         String checkAnswer = "";
+         String answer = "";
 
         while (rightAnswers < questionToWin && wrongAnswers < questionToLose) {
-            checkAnswer = game();
+            checkAnswer = game.getAnswerAndQuestion();
             System.out.print("Your answer: ");
             answer = scanner.next().toLowerCase();
             if (answer.equals(checkAnswer)) {
@@ -37,8 +48,7 @@ public abstract class Engine {
                     + "Let's try again, " + userName);
         }
     }
-
-    public abstract String getName();
-
-    abstract String game();
+    public String getName(Game game){
+         return game.getName();
+    }
 }
