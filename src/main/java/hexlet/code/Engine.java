@@ -45,7 +45,7 @@ import java.util.Scanner;
         } else {
             System.out.println("'" + answer + "'" + "is wrong answer ;(. "
                     + "Correct answer was '" + checkAnswer + "'. "
-                    + "Let's try again, " + userName);
+                    + "Let's try again, " + userName + "!");
         }
     }
     /*public String getName(Game game){
