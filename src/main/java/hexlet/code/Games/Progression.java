@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Progression implements Game{
 
     final int minNumberPlus = 6;
-    final int minNumbersInProgression = 5;
+    final int minNumbersInProgression = 6;
     final int maxNumberInProgression = 100;
     Random random = new Random();
 
