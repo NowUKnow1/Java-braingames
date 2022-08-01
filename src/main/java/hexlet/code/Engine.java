@@ -41,14 +41,14 @@ import java.util.Scanner;
             }
         }
         if (rightAnswers == questionToWin) {
-            System.out.println("Congratulations, " + userName);
+            System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("'" + answer + "'" + "is wrong answer ;(. "
                     + "Correct answer was '" + checkAnswer + "'."
                     + "Let's try again, " + userName);
         }
     }
-    public String getName(Game game){
+    /*public String getName(Game game){
          return game.getName();
-    }
+    }*/
 }
