@@ -33,16 +33,17 @@ public class Progression implements Game{
                 correctAnswer = numbersInProgression[j];
             }
         }
-        StringBuilder arrayForQuestion = new StringBuilder();
+        String[] arrayForQuestion = new String[maxNumbersInProgression];
         for (int k = 0; k < maxNumbersInProgression; k++) {
-            String stepByStepGettingQuestion = Arrays.toString(new int[]{numbersInProgression[k]});
             if (k == hiddenNumberInProgression) {
-                arrayForQuestion.append(" ..");
+                arrayForQuestion[k] = "..";
             } else {
-                arrayForQuestion.append(" ").append(stepByStepGettingQuestion);
+                arrayForQuestion[k] = String.valueOf(firstNumberInProgression + stepOfProgression * k);
             }
         }
-        System.out.println("Question: " + arrayForQuestion);
+        String question = Arrays.toString(arrayForQuestion);
+        question = question.replaceAll(",", "").replace("[", "").replace("]", "");
+        System.out.println("Question: " + question);
         return Integer.toString(correctAnswer);
     }
 }
