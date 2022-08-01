@@ -44,7 +44,7 @@ import java.util.Scanner;
             System.out.println("Congratulations, " + userName + "!");
         } else {
             System.out.println("'" + answer + "'" + "is wrong answer ;(. "
-                    + "Correct answer was '" + checkAnswer + "'."
+                    + "Correct answer was '" + checkAnswer + "'. "
                     + "Let's try again, " + userName);
         }
     }
