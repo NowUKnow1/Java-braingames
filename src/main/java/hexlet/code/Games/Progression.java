@@ -37,9 +37,9 @@ public class Progression implements Game{
         for (int k = 0; k < maxNumbersInProgression; k++) {
             String stepByStepGettingQuestion = Arrays.toString(new int[]{numbersInProgression[k]});
             if (k == hiddenNumberInProgression) {
-                arrayForQuestion.append(", .., ");
+                arrayForQuestion.append(".. ");
             } else {
-                arrayForQuestion.append(", ").append(stepByStepGettingQuestion);
+                arrayForQuestion.append(" ").append(stepByStepGettingQuestion);
             }
         }
         System.out.println("Question: " + arrayForQuestion);
