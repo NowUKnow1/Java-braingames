@@ -11,8 +11,8 @@ public class Calc implements Game {
     private final int addition = 1;
     private final int subtraction = 2;
     private final int multiply = 3;
-    private final String gameName= "Calc";
-    private final String gameGoal= "What is the result of the expression?";
+    private final String gameName = "Calc";
+    private final String gameGoal = "What is the result of the expression?";
     public final String getName() {
         return gameName;
     }

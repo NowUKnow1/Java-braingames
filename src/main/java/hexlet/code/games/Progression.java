@@ -6,8 +6,8 @@ public class Progression implements Game {
     private final int minNumbersInProgression = 6;
     private final int maxNumberInProgression = 100;
     private final int maxStep = 10;
-    private final String gameName= "Progression";
-    private final String gameGoal= "What number is missing in the progression?";
+    private final String gameName = "Progression";
+    private final String gameGoal = "What number is missing in the progression?";
     public final String getName() {
         return gameName;
     }

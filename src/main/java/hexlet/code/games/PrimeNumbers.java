@@ -6,8 +6,8 @@ public class PrimeNumbers implements Game {
     private final int maxNumbers = 101;
     private final String prime = "yes";
     private final String notPrime = "no";
-    private final String gameName= "Prime Numbers";
-    private final String gameGoal= "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private final String gameName = "Prime Numbers";
+    private final String gameGoal = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public final String getName() {
         return gameName;
     }

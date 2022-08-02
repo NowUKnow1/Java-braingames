@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class GCD implements Game {
     private final int maxNumbers = 100;
-    private final String gameName= "GCD";
-    private final String gameGoal= "Find the greatest common divisor of given numbers.";
+    private final String gameName = "GCD";
+    private final String gameGoal = "Find the greatest common divisor of given numbers.";
     public final String getName() {
         return gameName;
     }

@@ -4,8 +4,8 @@ public class EvenNumbers implements Game {
     private final String even = "yes";
     private final String odd = "no";
     private final int maxNumbers = 100;
-    private final String gameName= "Even Numbers";
-    private final String gameGoal= "Answer 'yes' if number even otherwise answer 'no'.";
+    private final String gameName = "Even Numbers";
+    private final String gameGoal = "Answer 'yes' if number even otherwise answer 'no'.";
     public final String getName() {
         return gameName;
     }
