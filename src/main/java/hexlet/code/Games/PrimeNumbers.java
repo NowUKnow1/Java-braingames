@@ -4,9 +4,13 @@ import java.util.Random;
 
 public class PrimeNumbers implements Game {
 
-    private String answer = "";
+    private static final String prime = "yes";
+    private static final String notPrime = "no";
 
-    private int randomNumber = 0;
+    private static final int TWO = 2;
+    private static final int THREE = 3;
+    private static final int FIVE = 5;
+    private static final int SEVEN = 7;
 
     public final String getName() {
         return "Prime Numbers";
@@ -18,18 +22,16 @@ public class PrimeNumbers implements Game {
 
     public final String getAnswerAndQuestion() {
         final int maxNumbers = 101;
-        final String prime = "yes";
-        final String notPrime = "no";
         Random random = new Random();
-        randomNumber = random.nextInt(maxNumbers);
+        int randomNumber = random.nextInt(maxNumbers);
         System.out.println("Question: " + randomNumber);
-        if (randomNumber % 2 == 0 || randomNumber % 3 == 0 || randomNumber % 5 == 0 || randomNumber % 7 == 0) {
-            answer = notPrime;
+        if (randomNumber % TWO == 0 || randomNumber % THREE == 0 || randomNumber % FIVE == 0 || randomNumber % SEVEN == 0) {
+            return notPrime;
         } else {
-            answer = prime;
+            return prime;
         }
-        return answer;
     }
+
 }
 
 

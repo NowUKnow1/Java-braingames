@@ -9,16 +9,11 @@ final class Engine {
     private final int questionsToWin = 3;
     private final int questionsToLose = 1;
 
-    private String userName = "";
-
     private Scanner scanner = new Scanner(System.in);
-
-    public Engine() {
-    }
 
     public void start(Game game) {
         System.out.println("Welcome to the Brain Games!");
-        userName = Cli.getName();
+        String userName = Cli.getName();
         System.out.println("Hello, " + userName + "!");
         String goal = game.getGoal();
         System.out.println(goal);
