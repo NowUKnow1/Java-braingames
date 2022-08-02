@@ -4,19 +4,19 @@ import java.util.Random;
 
 public class PrimeNumbers implements Game {
 
-    String answer = "";
+    private String answer = "";
 
-    int randomNumber = 0;
+    private int randomNumber = 0;
 
-    public String getName() {
+    public final String getName() {
         return "Prime Numbers";
     }
 
-    public String getGoal() {
+    public final String getGoal() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    public String getAnswerAndQuestion() {
+    public final String getAnswerAndQuestion() {
         final int maxNumbers = 101;
         final String prime = "yes";
         final String notPrime = "no";

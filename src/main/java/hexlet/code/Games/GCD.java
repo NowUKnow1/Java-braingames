@@ -3,17 +3,17 @@ package hexlet.code.Games;
 import java.util.Random;
 
 public class GCD implements Game {
-    final int maxNumbers = 100;
+    private final int maxNumbers = 100;
 
-    public String getName() {
+    public final String getName() {
         return "GCD";
     }
 
-    public String getGoal() {
+    public final String getGoal() {
         return "Find the greatest common divisor of given numbers.";
     }
 
-    public String getAnswerAndQuestion() {
+    public final String getAnswerAndQuestion() {
         int gcd = 0;
         Random random = new Random();
         int firstNumber = random.nextInt(maxNumbers) + 1;
