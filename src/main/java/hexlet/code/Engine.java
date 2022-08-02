@@ -3,20 +3,19 @@ package hexlet.code;
 import hexlet.code.Games.Game;
 
 import java.util.Scanner;
-final class Engine {
-    private final int questionsToWin = 3;
 
+final class Engine {
+
+    private final int questionsToWin = 3;
     private final int questionsToLose = 1;
 
     private String userName = "";
 
     private Scanner scanner = new Scanner(System.in);
 
-/*    private Game game;
+    public Engine() {
+    }
 
-    Engine(Game game) {
-        this.game = game;
-    }*/
     public void start(Game game) {
         System.out.println("Welcome to the Brain Games!");
         userName = Cli.getName();
@@ -47,7 +46,5 @@ final class Engine {
                     + "Let's try again, " + userName + "!");
         }
     }
-    /*public String getName(Game game){
-         return game.getName();
-    }*/
+
 }
