@@ -14,9 +14,9 @@ final class Engine {
 
     public void start(Game game) {
         System.out.println("Welcome to the Brain Games!");
-        Scanner sc = new Scanner(System.in);
+        Scanner name = new Scanner(System.in);
         System.out.print("May I have your name? ");
-        String userName = sc.next();
+        userName = name.next();
         System.out.println("Hello, " + userName + "!");
         String goal = game.getGoal();
         System.out.println(goal);
