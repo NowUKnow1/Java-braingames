@@ -22,7 +22,6 @@ public class App {
 
     private static final Engine GAME_ENGINE = new Engine();
 
-    private static final Engine GAME_ENGINE = new Engine();
 
     private static  final Map<Integer, Game> GAMES = new LinkedHashMap<>() {{
             put(EVEN, new EvenNumbers());
