@@ -13,11 +13,14 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class App {
-    static final int EVEN = 2;
-    static final int CALC = 3;
-    static final int GCD = 4;
-    static final int PROGRESSION = 5;
-    static final int PRIME = 6;
+
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
+
+    private static final Engine GAME_ENGINE = new Engine();
 
     private static final Engine GAME_ENGINE = new Engine();
 
@@ -50,6 +53,6 @@ public class App {
             default -> System.out.println("Input correct game number!");
         }
 
-
     }
+
 }
