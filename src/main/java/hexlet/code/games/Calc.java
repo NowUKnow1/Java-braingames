@@ -1,4 +1,4 @@
-package hexlet.code.Games;
+package hexlet.code.games;
 
 
 import java.util.Random;
@@ -29,28 +29,29 @@ public class Calc implements Game {
         return "What is the result of the expression?";
     }
 
-    public final String getAnswerAndQuestion() {
+    public final String[] getAnswerAndQuestion() {
         Random random = new Random();
         firstNumber = random.nextInt(maxFirstNumber);
         secondNumber = random.nextInt(maxSecondNumber);
         chooseMath = random.nextInt(neededNumberOfOperations) + 1;
+        String[] answerAndQuestion = new String[2];
         switch (chooseMath) {
             case addition -> {
-                System.out.println("Question: " + firstNumber + " + " + secondNumber);
-                answer = firstNumber + secondNumber;
+                answerAndQuestion[1] = "Question: " + firstNumber + " + " + secondNumber;
+                answerAndQuestion[0] = Integer.toString(firstNumber + secondNumber);
             }
             case subtraction -> {
-                System.out.println("Question: " + firstNumber + " - " + secondNumber);
-                answer = firstNumber - secondNumber;
+                answerAndQuestion[1] = "Question: " + firstNumber + " - " + secondNumber;
+                answerAndQuestion[0] = Integer.toString(firstNumber - secondNumber);
             }
             case multiply -> {
-                System.out.println("Question: " + firstNumber + " * " + secondNumber);
-                answer = firstNumber * secondNumber;
+                answerAndQuestion[1] = "Question: " + firstNumber + " * " + secondNumber;
+                answerAndQuestion[0] = Integer.toString(firstNumber * secondNumber);
             }
             default -> {
                 System.out.println("Whoops");
             }
         }
-        return Integer.toString(answer);
+        return answerAndQuestion;
     }
 }

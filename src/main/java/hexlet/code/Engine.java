@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.Games.Game;
+import hexlet.code.games.Game;
 
 import java.util.Scanner;
 final class Engine {
@@ -12,14 +12,11 @@ final class Engine {
 
     private Scanner scanner = new Scanner(System.in);
 
-/*    private Game game;
-
-    Engine(Game game) {
-        this.game = game;
-    }*/
     public void start(Game game) {
         System.out.println("Welcome to the Brain Games!");
-        userName = Cli.getName();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("May I have your name? ");
+        String userName = sc.next();
         System.out.println("Hello, " + userName + "!");
         String goal = game.getGoal();
         System.out.println(goal);
@@ -29,7 +26,9 @@ final class Engine {
         String answer = "";
 
         while (rightAnswers < questionsToWin && wrongAnswers < questionsToLose) {
-            checkAnswer = game.getAnswerAndQuestion();
+            String[] answerAndQuestion = game.getAnswerAndQuestion();
+            checkAnswer = answerAndQuestion[0];
+            System.out.println(answerAndQuestion[1]);
             System.out.print("Your answer: ");
             answer = scanner.next().toLowerCase();
             if (answer.equals(checkAnswer)) {
@@ -47,7 +46,4 @@ final class Engine {
                     + "Let's try again, " + userName + "!");
         }
     }
-    /*public String getName(Game game){
-         return game.getName();
-    }*/
 }

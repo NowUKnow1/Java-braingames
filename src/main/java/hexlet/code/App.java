@@ -1,12 +1,12 @@
 package hexlet.code;
 
 
-import hexlet.code.Games.Game;
-import hexlet.code.Games.EvenNumbers;
-import hexlet.code.Games.Calc;
-import hexlet.code.Games.GCD;
-import hexlet.code.Games.Progression;
-import hexlet.code.Games.PrimeNumbers;
+import hexlet.code.games.Game;
+import hexlet.code.games.EvenNumbers;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.PrimeNumbers;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -18,6 +18,8 @@ public class App {
     static final int GCD = 4;
     static final int PROGRESSION = 5;
     static final int PRIME = 6;
+
+    private static final Engine GAME_ENGINE = new Engine();
 
     private static  final Map<Integer, Game> GAMES = new LinkedHashMap<>() {{
             put(EVEN, new EvenNumbers());
@@ -44,9 +46,7 @@ public class App {
                 String game = Cli.getName();
                 System.out.println("Hello, " + game + "!");
             }
-/*
-            case EVEN, CALC, GCD, PROGRESSION, PRIME -> new Engine(GAMES.get(gameNumber)).start();
-*/
+            case EVEN, CALC, GCD, PROGRESSION, PRIME -> GAME_ENGINE.start(GAMES.get(gameNumber));
             default -> System.out.println("Input correct game number!");
         }
 

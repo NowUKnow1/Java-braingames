@@ -1,4 +1,4 @@
-package hexlet.code.Games;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ public class Progression implements Game {
     public final String getGoal() {
         return "What number is missing in the progression?";
     }
-    public final String getAnswerAndQuestion() {
+    public final String[] getAnswerAndQuestion() {
         int firstNumberInProgression = random.nextInt(maxNumberInProgression);
         int hiddenNumberInProgression = random.nextInt(maxNumbersInProgression);
         int stepOfProgression = random.nextInt(maxStep) + 1;
@@ -44,7 +44,10 @@ public class Progression implements Game {
         String question = Arrays.toString(arrayForQuestion);
         question = question.replaceAll(",", "").replace("[", "").replace("]", "");
         System.out.println("Question: " + question);
-        return Integer.toString(correctAnswer);
+        String[] answerAndQuestion = new String[2];
+        answerAndQuestion[0] = Integer.toString(correctAnswer);
+        answerAndQuestion[1] = "Question: " + question;
+        return answerAndQuestion;
     }
 }
 

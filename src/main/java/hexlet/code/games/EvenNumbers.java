@@ -1,4 +1,4 @@
-package hexlet.code.Games;
+package hexlet.code.games;
 
 import java.util.Random;
 
@@ -22,14 +22,15 @@ public class EvenNumbers implements Game {
         return "Answer 'yes' if number even otherwise answer 'no'.";
     }
 
-    public final String getAnswerAndQuestion() {
+    public final String[] getAnswerAndQuestion() {
         int randomNumber = random.nextInt(maxNumbers) + 1;
-        System.out.println("Question: " + randomNumber);
+        String[] answerAndQuestion = new String[2];
+        answerAndQuestion[1] = "Question: " + randomNumber;
         if (randomNumber % 2 == 0) {
-            answer = even;
+            answerAndQuestion[0] = even;
         } else {
-            answer = odd;
+            answerAndQuestion[0] = odd;
         }
-        return answer;
+        return answerAndQuestion;
     }
 }
