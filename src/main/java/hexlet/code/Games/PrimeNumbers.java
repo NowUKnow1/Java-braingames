@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class PrimeNumbers implements Game {
 
-    private static final String prime = "yes";
-    private static final String notPrime = "no";
+    private static final String PRIME = "yes";
+    private static final String NOT_PRIME = "no";
 
     private static final int TWO = 2;
     private static final int THREE = 3;
@@ -25,10 +25,11 @@ public class PrimeNumbers implements Game {
         Random random = new Random();
         int randomNumber = random.nextInt(maxNumbers);
         System.out.println("Question: " + randomNumber);
-        if (randomNumber % TWO == 0 || randomNumber % THREE == 0 || randomNumber % FIVE == 0 || randomNumber % SEVEN == 0) {
-            return notPrime;
+        if (randomNumber % TWO == 0 || randomNumber % THREE == 0
+                || randomNumber % FIVE == 0 || randomNumber % SEVEN == 0) {
+            return NOT_PRIME;
         } else {
-            return prime;
+            return PRIME;
         }
     }
 
