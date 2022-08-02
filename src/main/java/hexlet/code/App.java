@@ -48,8 +48,8 @@ public class App {
                 String game = Cli.getName();
                 System.out.println("Hello, " + game + "!");
             }
-            case EVEN, CALC, GCD, PROGRESSION, PRIME -> GAME_ENGINE.start(GAMES.get(gameNumber));
-            default -> System.out.println("Input correct game number!");
+            case EVEN, CALC, GCD, PROGRESSION, PRIME -> GAME_ENGINE.play(GAMES.get(gameNumber));
+            default -> System.out.println("Sorry, but you lose on this step. Welcome to the start");
         }
 
     }

@@ -8,11 +8,11 @@ final class Engine {
 
     private final int questionsToLose = 1;
 
-    private String userName = "";
+    private static String userName = "";
 
     private Scanner scanner = new Scanner(System.in);
 
-    public void start(Game game) {
+    public void play(Game game) {
         System.out.println("Welcome to the Brain Games!");
         Scanner name = new Scanner(System.in);
         System.out.print("May I have your name? ");

@@ -4,13 +4,14 @@ import java.util.Random;
 
 public class GCD implements Game {
     private final int maxNumbers = 100;
-
+    private final String gameName= "GCD";
+    private final String gameGoal= "Find the greatest common divisor of given numbers.";
     public final String getName() {
-        return "GCD";
+        return gameName;
     }
 
     public final String getGoal() {
-        return "Find the greatest common divisor of given numbers.";
+        return gameGoal;
     }
 
     public final String[] getAnswerAndQuestion() {
