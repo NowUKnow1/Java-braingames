@@ -20,7 +20,7 @@ public class App {
     private static final int PROGRESSION = 5;
     private static final int PRIME = 6;
 
-    private static final Engine GAME_ENGINE = new Engine();
+    private final Engine GAME_ENGINE = new Engine();
 
 
     private static final Map<Integer, Game> GAMES = new LinkedHashMap<>() {{
@@ -31,7 +31,7 @@ public class App {
             put(PRIME, new PrimeNumbers());
         }};
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet");
