@@ -3,23 +3,22 @@ package hexlet.code.games;
 import java.util.Random;
 
 public class GCD implements Game {
-    private final int maxNumbers = 100;
-    private final String gameName = "GCD";
-    private final String gameGoal = "Find the greatest common divisor of given numbers.";
+    private static final int MAX_NUMBER = 100;
+    private static final String GAME_NAME = "GCD";
+    private static final String GAME_GOAL = "Find the greatest common divisor of given numbers.";
     public final String getName() {
-        return gameName;
+        return GAME_NAME;
     }
 
     public final String getGoal() {
-        return gameGoal;
+        return GAME_GOAL;
     }
 
     public final String[] getAnswerAndQuestion() {
         int gcd = 0;
         Random random = new Random();
-        int firstNumber = random.nextInt(maxNumbers) + 1;
-        int secondNumber = random.nextInt(maxNumbers) + 1;
-        System.out.println("Question: " + firstNumber + " " + secondNumber);
+        int firstNumber = random.nextInt(MAX_NUMBER) + 1;
+        int secondNumber = random.nextInt(MAX_NUMBER) + 1;
         for (int j = 1; j <= firstNumber && j <= secondNumber; j++) {
             if (firstNumber % j == 0 && secondNumber % j == 0) {
                 gcd = j;
@@ -27,7 +26,7 @@ public class GCD implements Game {
         }
         String[] answerAndQuestion = new String[2];
         answerAndQuestion[0] = Integer.toString(gcd);
-        answerAndQuestion[1] = "Question: " + firstNumber + " " + secondNumber;
+        answerAndQuestion[1] = firstNumber + " " + secondNumber;
         return answerAndQuestion;
     }
 }

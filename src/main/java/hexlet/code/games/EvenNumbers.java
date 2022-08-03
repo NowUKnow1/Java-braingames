@@ -1,26 +1,26 @@
 package hexlet.code.games;
 import java.util.Random;
 public class EvenNumbers implements Game {
-    private final String even = "yes";
-    private final String odd = "no";
-    private final int maxNumbers = 100;
-    private final String gameName = "Even Numbers";
-    private final String gameGoal = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String YES = "yes";
+    private static final String NO = "no";
+    private static final int MAX_NUMBER = 100;
+    private static final String GAME_NAME = "Even Numbers";
+    private static final String GAME_GOAL = "Answer 'yes' if number yes otherwise answer 'no'.";
     public final String getName() {
-        return gameName;
+        return GAME_NAME;
     }
     public final String getGoal() {
-        return gameGoal;
+        return GAME_GOAL;
     }
     public final String[] getAnswerAndQuestion() {
         Random random = new Random();
-        int randomNumber = random.nextInt(maxNumbers) + 1;
+        int randomNumber = random.nextInt(MAX_NUMBER) + 1;
         String[] answerAndQuestion = new String[2];
-        answerAndQuestion[1] = "Question: " + randomNumber;
+        answerAndQuestion[1] = Integer.toString(randomNumber);
         if (randomNumber % 2 == 0) {
-            answerAndQuestion[0] = even;
+            answerAndQuestion[0] = YES;
         } else {
-            answerAndQuestion[0] = odd;
+            answerAndQuestion[0] = NO;
         }
         return answerAndQuestion;
     }

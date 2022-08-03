@@ -5,38 +5,38 @@ import java.util.Random;
 
 public class Calc implements Game {
 
-    private final int maxFirstNumber = 101;
-    private final int maxSecondNumber = 101;
-    private final int neededNumberOfOperations = 3;
-    private final int addition = 1;
-    private final int subtraction = 2;
-    private final int multiply = 3;
-    private final String gameName = "Calc";
-    private final String gameGoal = "What is the result of the expression?";
+    private static final int MAX_FIRST_NUMBER = 101;
+    private static final int MAX_SECOND_NUMBER = 101;
+    private static final int NEEDED_NUMBER_OF_OPERATIONS = 3;
+    private static final int ADDITION = 1;
+    private static final int SUBTRACTION = 2;
+    private static final int MULTIPLY = 3;
+    private static final String GAME_NAME = "Calc";
+    private static final String GAME_GOAL = "What is the result of the expression?";
     public final String getName() {
-        return gameName;
+        return GAME_NAME;
     }
 
     public final String getGoal() {
-        return gameGoal;
+        return GAME_GOAL;
     }
     public final String[] getAnswerAndQuestion() {
         Random random = new Random();
-        int firstNumber = random.nextInt(maxFirstNumber);
-        int secondNumber = random.nextInt(maxSecondNumber);
-        int chooseMath = random.nextInt(neededNumberOfOperations) + 1;
+        int firstNumber = random.nextInt(MAX_FIRST_NUMBER);
+        int secondNumber = random.nextInt(MAX_SECOND_NUMBER);
+        int chooseMath = random.nextInt(NEEDED_NUMBER_OF_OPERATIONS) + 1;
         String[] answerAndQuestion = new String[2];
         switch (chooseMath) {
-            case addition -> {
-                answerAndQuestion[1] = "Question: " + firstNumber + " + " + secondNumber;
+            case ADDITION -> {
+                answerAndQuestion[1] = firstNumber + " + " + secondNumber;
                 answerAndQuestion[0] = Integer.toString(firstNumber + secondNumber);
             }
-            case subtraction -> {
-                answerAndQuestion[1] = "Question: " + firstNumber + " - " + secondNumber;
+            case SUBTRACTION -> {
+                answerAndQuestion[1] = firstNumber + " - " + secondNumber;
                 answerAndQuestion[0] = Integer.toString(firstNumber - secondNumber);
             }
-            case multiply -> {
-                answerAndQuestion[1] = "Question: " + firstNumber + " * " + secondNumber;
+            case MULTIPLY -> {
+                answerAndQuestion[1] = firstNumber + " * " + secondNumber;
                 answerAndQuestion[0] = Integer.toString(firstNumber * secondNumber);
             }
             default -> {

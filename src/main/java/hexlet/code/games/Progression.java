@@ -1,44 +1,40 @@
 package hexlet.code.games;
 import java.util.Random;
-import java.util.Arrays;
+import java.util.StringJoiner;
+
 public class Progression implements Game {
-    private final int minNumberPlus = 6;
-    private final int minNumbersInProgression = 6;
-    private final int maxNumberInProgression = 100;
-    private final int maxStep = 10;
-    private final String gameName = "Progression";
-    private final String gameGoal = "What number is missing in the progression?";
+    private static final int MIN_NUMBER_PLUS = 6;
+    private static final int MIN_NUMBERS_IN_PROGRESSION = 6;
+    private static final int MAX_NUMBER_IN_PROGRESSION = 100;
+    private static final int MAX_STEP = 10;
+    private static final String GAME_NAME = "Progression";
+    private static final String GAME_GOAL = "What number is missing in the progression?";
     public final String getName() {
-        return gameName;
+        return GAME_NAME;
     }
     public final String getGoal() {
-        return gameGoal;
+        return GAME_GOAL;
     }
     public final String[] getAnswerAndQuestion() {
         Random random = new Random();
         int correctAnswer = 0;
-        int maxNumbersInProgression = random.nextInt(minNumberPlus) + minNumbersInProgression;
-        int[] numbersInProgression = new int[maxNumbersInProgression];
-        String[] arrayForQuestion = new String[maxNumbersInProgression];
-        int firstNumberInProgression = random.nextInt(maxNumberInProgression);
+        int maxNumbersInProgression = random.nextInt(MIN_NUMBER_PLUS) + MIN_NUMBERS_IN_PROGRESSION;
+        StringJoiner arrayForQuestion = new StringJoiner(" ");
+        int firstNumberInProgression = random.nextInt(MAX_NUMBER_IN_PROGRESSION);
         int hiddenNumberInProgression = random.nextInt(maxNumbersInProgression);
-        int stepOfProgression = random.nextInt(maxStep) + 1;
-
+        int stepOfProgression = random.nextInt(MAX_STEP) + 1;
         for (int j = 0; j < maxNumbersInProgression; j++) {
-            numbersInProgression[j] = firstNumberInProgression + stepOfProgression * j;
             if (j == hiddenNumberInProgression) {
-                correctAnswer = numbersInProgression[j];
-                arrayForQuestion[j] = "..";
+                correctAnswer = firstNumberInProgression + stepOfProgression * j;
+                arrayForQuestion.add("..");
             } else {
-                arrayForQuestion[j] = String.valueOf(firstNumberInProgression + stepOfProgression * j);
+                arrayForQuestion.add(String.valueOf(firstNumberInProgression + stepOfProgression * j));
             }
         }
-        String question = Arrays.toString(arrayForQuestion);
-        question = question.replaceAll(",", "").replace("[", "").replace("]", "");
-        System.out.println("Question: " + question);
+        String question = arrayForQuestion.toString();
         String[] answerAndQuestion = new String[2];
         answerAndQuestion[0] = Integer.toString(correctAnswer);
-        answerAndQuestion[1] = "Question: " + question;
+        answerAndQuestion[1] = question;
         return answerAndQuestion;
     }
 }

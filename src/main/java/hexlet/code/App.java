@@ -23,7 +23,7 @@ public class App {
     private static final Engine GAME_ENGINE = new Engine();
 
 
-    private static  final Map<Integer, Game> GAMES = new LinkedHashMap<>() {{
+    private static final Map<Integer, Game> GAMES = new LinkedHashMap<>() {{
             put(EVEN, new EvenNumbers());
             put(CALC, new Calc());
             put(GCD, new GCD());
