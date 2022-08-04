@@ -15,12 +15,14 @@ import java.util.Scanner;
 public class App {
 
     private static final int EVEN = 2;
-    private static final int CALC = 3;
-    private static final int GCD = 4;
-    private static final int PROGRESSION = 5;
-    private static final int PRIME = 6;
 
-    private static final Engine GAME_ENGINE = new Engine();
+    private static final int CALC = 3;
+
+    private static final int GCD = 4;
+
+    private static final int PROGRESSION = 5;
+
+    private static final int PRIME = 6;
 
 
     private static final Map<Integer, Game> GAMES = new LinkedHashMap<>() {{
@@ -48,7 +50,7 @@ public class App {
                 String game = Cli.getName();
                 System.out.println("Hello, " + game + "!");
             }
-            case EVEN, CALC, GCD, PROGRESSION, PRIME -> GAME_ENGINE.play(GAMES.get(gameNumber));
+            case EVEN, CALC, GCD, PROGRESSION, PRIME -> Engine.play(GAMES.get(gameNumber));
             default -> System.out.println("Sorry, but you lose on this step. Welcome to the start");
         }
 
