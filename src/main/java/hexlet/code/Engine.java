@@ -4,14 +4,14 @@ import hexlet.code.games.Game;
 
 import java.util.Scanner;
 public final class Engine {
+    
     private static final int QUESTIONS_TO_WIN = 3;
-
     private static final int QUESTIONS_TO_LOSE = 1;
 
-
     public static void play(Game game) {
+        
         System.out.println("Welcome to the Brain Games!");
-
+        
         Scanner usersInput = new Scanner(System.in);
         System.out.print("May I have your name? ");
         String userName = usersInput.next();
@@ -21,11 +21,8 @@ public final class Engine {
         System.out.println(goal);
 
         int rightAnswers = 0;
-
         int wrongAnswers = 0;
-
         String correctAnswer = "";
-
         String inputAnswer = "";
 
         while (rightAnswers < QUESTIONS_TO_WIN && wrongAnswers < QUESTIONS_TO_LOSE) {
