@@ -42,21 +42,17 @@ public class App {
             System.out.println(game.getKey() + " - " + game.getValue().getName());
         }
         System.out.println("0 - Exit");
-        
         System.out.print("Your choice: ");
         int gameNumber = sc.nextInt();
         
         switch (gameNumber) {
             case 0 -> System.out.println("The champ is here");
-                
             case 1 -> {
                 System.out.println("Welcome to the Brain Games!");
                 String game = Cli.getName();
                 System.out.println("Hello, " + game + "!");
             }
-                
-            case EVEN, CALC, GCD, PROGRESSION, PRIME -> Engine.play(GAMES.get(gameNumber));
-                
+            case EVEN, CALC, GCD, PROGRESSION, PRIME -> Engine.play(GAMES.get(gameNumber));  
             default -> System.out.println("Sorry, but you lose on this step. Welcome to the start");
         }
 
