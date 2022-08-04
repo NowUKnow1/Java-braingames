@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 
 public final class EvenNumbers implements Game {
-    
+
     private static final String YES = "yes";
     private static final String NO = "no";
     private static final int MAX_NUMBER = 100;
@@ -19,7 +19,7 @@ public final class EvenNumbers implements Game {
     }
 
     public String[] getAnswerAndQuestion() {
-        
+
         Random random = new Random();
         int randomNumber = random.nextInt(MAX_NUMBER) + 1;
         String[] answerAndQuestion = new String[2];
