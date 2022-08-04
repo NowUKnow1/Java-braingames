@@ -35,8 +35,8 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter");
         
+        System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet");
         for (Map.Entry<Integer, Game> game : GAMES.entrySet()) {
             System.out.println(game.getKey() + " - " + game.getValue().getName());
