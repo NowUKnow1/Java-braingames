@@ -50,7 +50,7 @@ public class App {
                 String game = Cli.getName();
                 System.out.println("Hello, " + game + "!");
             }
-            case EVEN, CALC, GCD, PROGRESSION, PRIME -> Engine.play(GAMES.get(gameNumber));  
+            case EVEN, CALC, GCD, PROGRESSION, PRIME -> Engine.play(GAMES.get(gameNumber));
             default -> System.out.println("Sorry, but you lose on this step. Welcome to the start");
         }
 
