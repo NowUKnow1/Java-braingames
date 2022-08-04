@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 
 public final class PrimeNumbers implements Game {
-    
+
     private static final int MAX_NUMBER = 101;
     private static final String PRIME = "yes";
     private static final String NOT_PRIME = "no";
@@ -19,7 +19,7 @@ public final class PrimeNumbers implements Game {
     }
 
     public String[] getAnswerAndQuestion() {
-        
+
         boolean checkForPrime = true;
         Random random = new Random();
         int randomNumber = random.nextInt(MAX_NUMBER);
