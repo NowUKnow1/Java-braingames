@@ -45,7 +45,6 @@ public class App {
         System.out.println("0 - Exit");
         
         System.out.print("Your choice: ");
-        
         int gameNumber = sc.nextInt();
         
         switch (gameNumber) {
