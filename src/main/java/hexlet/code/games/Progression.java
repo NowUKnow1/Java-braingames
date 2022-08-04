@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.StringJoiner;
 
 public final class Progression implements Game {
-    
+
     private static final int MIN_NUMBER_PLUS = 6;
     private static final int MIN_NUMBERS_IN_PROGRESSION = 6;
     private static final int MAX_NUMBER_IN_PROGRESSION = 100;
@@ -20,7 +20,7 @@ public final class Progression implements Game {
     }
 
     public String[] getAnswerAndQuestion() {
-        
+
         Random random = new Random();
         int maxNumbersInProgression = random.nextInt(MIN_NUMBER_PLUS) + MIN_NUMBERS_IN_PROGRESSION;
         StringJoiner arrayForQuestion = new StringJoiner(" ");
