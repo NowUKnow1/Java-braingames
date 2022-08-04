@@ -41,7 +41,6 @@ public class App {
         for (Map.Entry<Integer, Game> game : GAMES.entrySet()) {
             System.out.println(game.getKey() + " - " + game.getValue().getName());
         }
-        
         System.out.println("0 - Exit");
         
         System.out.print("Your choice: ");
