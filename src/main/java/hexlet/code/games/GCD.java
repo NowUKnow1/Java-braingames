@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 
 public final class GCD implements Game {
-    
+
     private static final int MAX_NUMBER = 100;
     private static final String GAME_NAME = "GCD";
     private static final String GAME_GOAL = "Find the greatest common divisor of given numbers.";
@@ -17,7 +17,7 @@ public final class GCD implements Game {
     }
 
     public String[] getAnswerAndQuestion() {
-        
+
         int gcd = 0;
         Random random = new Random();
         int firstNumber = random.nextInt(MAX_NUMBER) + 1;
